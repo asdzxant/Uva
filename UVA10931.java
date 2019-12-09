@@ -15,7 +15,7 @@ public class UVA10931 {
   				if(n.charAt(i)=='1')
   					cnt++;
   			}
-  			System.out.printf("The parity of %s is %d (mod 2).\r\n", n, cnt);
+  			System.out.printf("The parity of %s is %d (mod 2).\n", n, cnt);
   		}
 	}
 

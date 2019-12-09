@@ -12,7 +12,7 @@ public class UVA11063 {
 			boolean isB2 = true;
 			for(int i=0;i<n;i++){
 				b[i] = sc.nextInt();
-				if(i>0 && b[i-1]>=b[i])
+				if(b[i]<1 || (i>0 && b[i-1]>=b[i]))
 					isB2 = false;
 			}
 			

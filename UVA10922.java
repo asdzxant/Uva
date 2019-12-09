@@ -32,7 +32,7 @@ public class UVA10922 {
 						cnt++;
 				}
 				
-				System.out.printf("%s is a multiple of 9 and has 9-degree %d.\r\n", num, cnt);
+				System.out.printf("%s is a multiple of 9 and has 9-degree %d.\n", num, cnt);
 			}
 		}
 	}

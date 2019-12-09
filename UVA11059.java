@@ -18,6 +18,9 @@ public class UVA11059 {
 			for(int i=0;i<n;i++){
 				long num = arr[i];
 				
+				if(num>max)
+					max=num;
+				
 				for(int j=i+1;j<n;j++){
 					num*=arr[j];
 					

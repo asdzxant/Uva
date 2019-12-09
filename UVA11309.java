@@ -23,8 +23,8 @@ public class UVA11309 {
 						m = 0;
 					}
 				}
-				if(isReadSame(h, m)){
-					System.out.printf("%02d:%02d\r\n", h, m);
+				if(isPalindromic(h, m)){
+					System.out.printf("%02d:%02d\n", h, m);
 					break;
 				}
 			}
@@ -32,22 +32,25 @@ public class UVA11309 {
 		}
 	}
 	
-	static boolean isReadSame(int h, int m){
+	static boolean isPalindromic(int h, int m){
 		
-		if(h==0)
-			return true;
+		String s = "";
 		
-		String hh = h+"";
-		String mm = m+"";
+		if(h==0) {
+			s+=m;
+		}
+		else {
+			s+=h;
+			String mm = m+"";
+			if(mm.length()==1)
+				mm = "0"+mm;
+			s+=mm;
+		}
 		
-		if(hh.length() == 1)
-			hh = "0"+hh;
-		if(mm.length() == 1)
-			mm = "0"+mm;
-			
-		if(hh.charAt(0)==mm.charAt(1) && hh.charAt(1)==mm.charAt(0))
-			return true;
-		else
-			return false;
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i)!=s.charAt(s.length()-1-i))
+				return false;
+		}
+		return true;
 	}
 }
