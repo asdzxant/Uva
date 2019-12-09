@@ -17,9 +17,13 @@ public class UVA10783 {
 			}
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			System.out.println("Case "+kase+": "+sum);
 =======
 			System.out.printf("Case %d: %d\n", kase, sum);
+>>>>>>> v1
+=======
+			System.out.println("Case "+kase+": "+sum);
 >>>>>>> v1
 		}
 	}
