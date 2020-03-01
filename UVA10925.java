@@ -6,7 +6,7 @@ public class UVA10925 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
         
-		int bill=1;
+		int k = 1;
 		while(sc.hasNext()){
 			int n = sc.nextInt();
 			int f = sc.nextInt();
@@ -16,12 +16,15 @@ public class UVA10925 {
 				
 			BigInteger sum = BigInteger.ZERO;
 			for(int i=0;i<n;i++){
-				sum = sum.add(new BigInteger(sc.next()));
+				BigInteger v = new BigInteger(sc.next());
+				sum = sum.add(v);
 			}
+	
+			BigInteger p = sum.divide(new BigInteger(f+""));
 			
-			System.out.println("Bill #"+bill+" costs "+sum+": each friend should pay "+sum.divide(new BigInteger(f+"")));
+			System.out.println("Bill #" + k + " costs " + sum + ": each friend should pay " + p);
 			System.out.println();
-			bill++;
+			k++;
 		}
 	}
 

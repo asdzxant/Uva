@@ -10,29 +10,28 @@ public class UVA10922 {
 			if(num.equals("0"))
 				break;
 			
-			int sum = 0;
+			int sum = 0, degree = 0;
 			for(int i=0;i<num.length();i++){
-				sum+=num.charAt(i)-'0';
+				sum += num.charAt(i)-'0';
 			}
 			
-			if(sum%9!=0){
-				System.out.println(num+" is not a multiple of 9.");
+			if(sum % 9 != 0){
+				System.out.println(num + " is not a multiple of 9.");
 			}
 			else{
-				int cnt = 1;
+				degree++;
 				int n = sum;
-				while(n%9==0 && n!=9){
+				while(n!=9) {
+					degree++;
 					sum = 0;
-					while(n>0){
-						sum+=n%10;
-						n/=10;
+					while(n > 0){
+						sum = sum + n % 10;
+						n = n / 10;
 					}
 					n = sum;
-					if(n%9==0)
-						cnt++;
 				}
 				
-				System.out.printf("%s is a multiple of 9 and has 9-degree %d.\n", num, cnt);
+				System.out.printf("%s is a multiple of 9 and has 9-degree %d.\n", num, degree);
 			}
 		}
 	}
