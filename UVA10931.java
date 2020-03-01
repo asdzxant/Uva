@@ -6,16 +6,26 @@ public class UVA10931 {
 		Scanner sc = new Scanner(System.in);
 		
   		while(sc.hasNext()){
-  			String n = Integer.toString(sc.nextInt(), 2);
-  			if(n.equals("0"))
+  			
+  			int n = sc.nextInt();
+  			if(n == 0)
   				break;
   			
-  			int cnt = 0;
-  			for(int i=0;i<n.length();i++){
-  				if(n.charAt(i)=='1')
-  					cnt++;
+  			String b = "";
+  			int p = 0;
+  			
+  			while(n>0) {
+  				int r = n % 2;
+  				
+  				b = r + b;
+  				
+  				if(r == 1)
+  					p++;
+  				
+  				n = n/2;
   			}
-  			System.out.printf("The parity of %s is %d (mod 2).\n", n, cnt);
+  			
+  			System.out.println("The parity of " + b + " is " + p + " (mod 2).");
   		}
 	}
 

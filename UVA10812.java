@@ -17,7 +17,7 @@ public class UVA10812 {
 			else{
 				int a = (s+d)/2;
 				int b = s-a;
-				System.out.println(a>b ? a+" "+b : b+" "+a);
+				System.out.println(a+" "+b);
 			}
 		}
 	}
