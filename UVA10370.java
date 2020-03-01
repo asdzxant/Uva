@@ -7,19 +7,19 @@ public class UVA10370 {
 			int n=sc.nextInt();
 			int a[]=new int[n];
 			int sum=0;
-			double count=0;
+			int count=0;
 			for(int i=0;i<n;i++) {
 				a[i]=sc.nextInt();
 				sum+=a[i];
 			}
-			double average=sum/n;
+			double average=(double)sum/n;
 			for(int i=0;i<n;i++) {
 				if(a[i]>average) {
 					count++;
 				}
 			}
 			
-			System.out.printf("%.3f",(count/n*100));
+			System.out.printf("%.3f",((double)count/n*100));
 			System.out.println("%");
 			
 		}
