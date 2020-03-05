@@ -1,5 +1,4 @@
 import java.util.*;
-import java.math.*;
 
 public class UVA10929 {
 
@@ -13,14 +12,19 @@ public class UVA10929 {
 			if(s.equals("0"))
 				break;
 			
-			BigInteger n = new BigInteger(s);
+			int a = 0, b = 0;
+			for(int i=0;i<s.length();i++){
+				int n = s.charAt(i)-'0';
+				if(i%2==0)
+					a = a + n;
+				else
+					b = b + n;
+			}
 			
-			BigInteger res = n.mod(new BigInteger("11"));
-			
-			if(res.compareTo(BigInteger.ZERO) == 0)
-				System.out.println(s+" is a multiple of 11.");
+			if(Math.abs(a-b) % 11 == 0)
+				System.out.println(s + " is a multiple of 11.");
 			else
-				System.out.println(s+" is not a multiple of 11.");
+				System.out.println(s + " is not a multiple of 11.");
 		}
 	}
 
