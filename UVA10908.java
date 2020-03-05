@@ -26,39 +26,21 @@ public class UVA10908 {
 				int r = sc.nextInt();
 				int c = sc.nextInt();
 				
-				int x[] = {-1, 1, -1, 1};
-				int y[] = {-1, -1, 1, 1};
-				
 				boolean extend = true;
 				int ans = 1;
 				char center = grid[r][c];
 				for(int i=1;;i++){
-					for(int j=0;j<x.length;j++){
-						int a = r+i*x[j];
-						int b = c+i*y[j];
-						
-						if(a < 0 || a >= m || b < 0 || b >= n){
-							extend = false;
-							break;
-						}
-					}
-					if(!extend)
-						break;
 					
-					for(int j=r+i*x[0];j<=r+i*x[1];j++){
-						if(grid[j][c+i*y[0]]!=center || grid[j][c+i*y[2]]!=center){
-							extend = false;
-							break;
+					for(int j=r-i;j<=r+i;j++){
+						for(int k=c-i;k<=c+i;k++){
+							if(j<0 || j>=m || k<0 || k>=n || grid[j][k]!=center){
+								extend = false;
+								break;
+							}
 						}
-					}
-					
-					for(int j=c+i*y[0];j<=c+i*y[2];j++){
-						if(grid[r+i*x[0]][j]!=center || grid[r+i*x[1]][j]!=center){
-							extend = false;
+						if(!extend)
 							break;
-						}
 					}
-					
 					if(!extend)
 						break;
 					
