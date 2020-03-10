@@ -21,7 +21,7 @@ public class UVA10929 {
 					b = b + n;
 			}
 			
-			if(Math.abs(a-b) % 11 == 0)
+			if((a-b) % 11 == 0)
 				System.out.println(s + " is a multiple of 11.");
 			else
 				System.out.println(s + " is not a multiple of 11.");
