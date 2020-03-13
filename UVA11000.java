@@ -8,19 +8,19 @@ public class UVA11000 {
  		while(sc.hasNext()){
  			int n = sc.nextInt();
  			
- 			if(n==-1)
+ 			if(n == -1)
  				break;
  				
  			long female = 1, male = 0;
  			for(int i=1;i<=n;i++){
- 				long girl = male+1;
- 				long boy = male+female;
+ 				long girl = male;
+ 				long boy = male + female;
  				
- 				female = girl;
+ 				female = girl + 1;
  				male = boy;
  			}
  			
- 			System.out.println(male+" "+(female+male));
+ 			System.out.println(male + " " + (female+male));
  		}
 	}
 
