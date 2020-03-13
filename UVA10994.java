@@ -6,13 +6,13 @@ public class UVA10994 {
 		Scanner sc = new Scanner(System.in);
 		
 		while(sc.hasNext()){
-			int p = sc.nextInt()-1;
+			int p = sc.nextInt();
 			int q = sc.nextInt();
 			
-			if(p==-2 && q==-1)
+			if(p<0 && q<0)
 				break;
 				
-			long sp = s(p);
+			long sp = s(p-1);
 			long sq = s(q);
 			
 			System.out.println(sq-sp);
@@ -22,11 +22,10 @@ public class UVA10994 {
 	static long s(int n){
 		long sum = 0;
 		while(n>0){
-			long q = n/10;
-			long r = n%10;
-			sum+=q*45;
-			sum+=(1+r)*r/2;
-			n/=10;
+			int q = n / 10;
+			int r = n % 10;
+			sum = sum + (long)q*45 + (1+r)*r/2;
+			n = n / 10;
 		}
 		return sum;
 	}
