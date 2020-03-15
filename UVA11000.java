@@ -13,11 +13,11 @@ public class UVA11000 {
  				
  			long female = 1, male = 0;
  			for(int i=1;i<=n;i++){
- 				long girl = male;
- 				long boy = male + female;
+ 				long birthFemale = male;
+ 				long birthMale = male + female;
  				
- 				female = girl + 1;
- 				male = boy;
+ 				female = birthFemale + 1;
+ 				male = birthMale;
  			}
  			
  			System.out.println(male + " " + (female+male));
